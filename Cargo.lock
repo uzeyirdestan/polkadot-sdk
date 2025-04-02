@@ -3324,10 +3324,10 @@ dependencies = [
  "pallet-collective-content",
  "pallet-core-fellowship",
  "pallet-dday-detection",
+ "pallet-dday-voting",
  "pallet-message-queue",
  "pallet-multisig",
  "pallet-preimage",
- "pallet-proofs-voting",
  "pallet-proxy",
  "pallet-ranked-collective",
  "pallet-referenda",
@@ -12608,7 +12608,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "pallet-proofs-voting"
+name = "pallet-dday-voting"
 version = "1.0.0"
 dependencies = [
  "frame-benchmarking",
