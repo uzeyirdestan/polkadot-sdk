@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1743541708125,
+  "lastUpdate": 1743598211384,
   "repoUrl": "https://github.com/paritytech/polkadot-sdk",
   "entries": {
     "approval-voting-regression-bench": [
@@ -84400,6 +84400,105 @@ window.BENCHMARK_DATA = {
           {
             "name": "test-environment",
             "value": 3.331334665832422,
+            "unit": "seconds"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "adrian@parity.io",
+            "name": "Adrian Catangiu",
+            "username": "acatangiu"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": false,
+          "id": "3766467f5adc670ff4f71e2ec9f27185fdcf97ca",
+          "message": "pallet-xcm: add support to authorize aliases (#6336)\n\nAdd calls to pallet-xcm for adding and removing authorization for a\ncertain `aliaser` location to alias into the caller `origin`.\n\n`pallet-xcm` also exposes an `AuthorizedAliases` filter implementation\nusable with `xcm_executor::Config::Aliasers` filter to easily allow\nruntimes to plug in the explicitly authorized aliases using the calls\nabove.\n\nUsually useful to allow your local account to be aliased into from a\nremote location also under your control (like your account on another\nchain).\n\nFor example, `Alice` on `Para42` can do _something_ on Asset Hub without\nhaving to transfer fees from `Para42`, but instead use her local Asset\nHub account:\n```rust\n// called by Alice on Para42\npallet_xcm::send(\n\tLocation::new(1, Parachain(1000)),\n\tXcm(vec![\n\t\tAliasOrigin(AliceOnAH),\n\t\tWithdrawAsset(fees),\n\t\tPayFees(fees),\n\t\tDoWhatever\n\t])\n);\n```\n\nPart of [Empowered cross-chain\norigins](https://github.com/paritytech/polkadot-sdk/issues/6054).\n\nFixes [XCM: Arbitrary Origin Aliases\n#722](https://github.com/paritytech/polkadot-sdk/issues/722)\n\n---------\n\nCo-authored-by: command-bot <>\nCo-authored-by: Francisco Aguirre <franciscoaguirreperez@gmail.com>\nCo-authored-by: cmd[bot] <41898282+github-actions[bot]@users.noreply.github.com>",
+          "timestamp": "2025-04-02T11:37:32Z",
+          "tree_id": "ea8ba5955d28d3a7a545797fd358679c614812c3",
+          "url": "https://github.com/paritytech/polkadot-sdk/commit/3766467f5adc670ff4f71e2ec9f27185fdcf97ca"
+        },
+        "date": 1743598194178,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Sent to peers",
+            "value": 63635.73999999999,
+            "unit": "KiB"
+          },
+          {
+            "name": "Received from peers",
+            "value": 52942.09999999999,
+            "unit": "KiB"
+          },
+          {
+            "name": "test-environment",
+            "value": 3.2892396145824003,
+            "unit": "seconds"
+          },
+          {
+            "name": "approval-voting/test-environment",
+            "value": 0.000017072710000000004,
+            "unit": "seconds"
+          },
+          {
+            "name": "approval-voting-parallel/approval-voting-parallel-1",
+            "value": 2.4960619063399987,
+            "unit": "seconds"
+          },
+          {
+            "name": "approval-voting-parallel/approval-voting-gather-signatures",
+            "value": 0.005555090009999997,
+            "unit": "seconds"
+          },
+          {
+            "name": "approval-voting-parallel/approval-voting-parallel-2",
+            "value": 2.5478934191000002,
+            "unit": "seconds"
+          },
+          {
+            "name": "approval-voting-parallel/approval-voting-parallel-3",
+            "value": 2.4989259637599988,
+            "unit": "seconds"
+          },
+          {
+            "name": "approval-voting",
+            "value": 0.000017072710000000004,
+            "unit": "seconds"
+          },
+          {
+            "name": "approval-voting-parallel/approval-voting-parallel-0",
+            "value": 2.531077635879999,
+            "unit": "seconds"
+          },
+          {
+            "name": "approval-voting-parallel/approval-voting-parallel-subsystem",
+            "value": 0.4496784183099942,
+            "unit": "seconds"
+          },
+          {
+            "name": "approval-voting-parallel",
+            "value": 12.381906529569994,
+            "unit": "seconds"
+          },
+          {
+            "name": "approval-distribution/test-environment",
+            "value": 0.00001767934,
+            "unit": "seconds"
+          },
+          {
+            "name": "approval-voting-parallel/approval-voting-parallel-db",
+            "value": 1.8527140961700046,
+            "unit": "seconds"
+          },
+          {
+            "name": "approval-distribution",
+            "value": 0.00001767934,
             "unit": "seconds"
           }
         ]
