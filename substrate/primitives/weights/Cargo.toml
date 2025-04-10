@@ -26,7 +26,7 @@ sp-debug-derive.workspace = true
 schemars = { optional = true, workspace = true }
 
 [features]
-default = ["std"]
+default = []
 std = [
 	"bounded-collections/std",
 	"codec/std",
